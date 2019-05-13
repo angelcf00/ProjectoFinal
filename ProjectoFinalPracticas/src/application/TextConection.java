@@ -29,7 +29,7 @@ public class TextConection {
 			if(miFichero.exists()) {
 				entrada = new FileInputStream(miFichero);
 				propiedades.load(entrada);
-		bd =	propiedades.getProperty("bd");
+			bd =	propiedades.getProperty("bd");
 			url =	propiedades.getProperty("url");
 			usr =	propiedades.getProperty("usr");
 			pwd =	propiedades.getProperty("pwd");
@@ -58,7 +58,7 @@ public class TextConection {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conexion = DriverManager.getConnection(url, usr, pwd);
-			
+			         
 			if(!conexion.isClosed()) {
 				System.out.println("Conexión establecida");
 				
@@ -81,4 +81,3 @@ public class TextConection {
 		conexion.close();
 	}
 }
-
