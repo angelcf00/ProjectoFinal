@@ -1,25 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controladora">
    <children>
       <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="759.0">
          <children>
-            <ImageView fitHeight="413.0" fitWidth="775.0" layoutX="-12.0" layoutY="-10.0">
-               <image>
-                  <Image url="@../../../../fondo.png" />
-               </image>
-            </ImageView>
-            <Button layoutX="14.0" layoutY="24.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="185.0" text="Empresas" />
-            <Button layoutX="289.0" layoutY="24.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="185.0" text="Alumnos" />
-            <Button layoutX="560.0" layoutY="24.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="185.0" text="Tutores" />
-            <Button layoutX="14.0" layoutY="160.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="185.0" text="Ciclos" />
-            <Button layoutX="289.0" layoutY="160.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="185.0" text="Centro" />
-            <Button layoutX="560.0" layoutY="160.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="185.0" text="Asignar Empresa" />
+            <Button fx:id="ButtonEmpresas" layoutX="14.0" layoutY="24.0" mnemonicParsing="false" onAction="#Empresas" prefHeight="100.0" prefWidth="185.0" text="Empresas" />
+            <Button fx:id="ButtonAlumnos" layoutX="289.0" layoutY="24.0" mnemonicParsing="false" onAction="#Alumnos" prefHeight="100.0" prefWidth="185.0" text="Alumnos" />
+            <Button fx:id="ButtonTutores" layoutX="560.0" layoutY="24.0" mnemonicParsing="false" onAction="#Tutores" prefHeight="100.0" prefWidth="185.0" text="Tutores" />
+            <Button fx:id="ButtonCiclos" layoutX="14.0" layoutY="160.0" mnemonicParsing="false" onAction="#Ciclos" prefHeight="100.0" prefWidth="185.0" text="Ciclos" />
+            <Button fx:id="ButtonCentro" layoutX="289.0" layoutY="160.0" mnemonicParsing="false" onAction="#Centro" prefHeight="100.0" prefWidth="185.0" text="Centro" />
+            <Button fx:id="ButtonVincular" layoutX="560.0" layoutY="160.0" mnemonicParsing="false" onAction="#Vincular" prefHeight="100.0" prefWidth="185.0" text="Asignar Empresa" />
             <Button layoutX="198.0" layoutY="289.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="367.0" text="Generar anexos" />
          </children>
       </AnchorPane>
