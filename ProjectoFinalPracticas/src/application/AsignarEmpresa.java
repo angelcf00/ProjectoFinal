@@ -86,6 +86,4 @@ public class AsignarEmpresa {
 	public void setDNITE(String dNITE) {
 		DNITE = dNITE;
 	}
-	
-	
 }

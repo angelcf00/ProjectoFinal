@@ -6,10 +6,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 import java.util.Scanner;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class TextConection {
 	private String bd;
@@ -79,5 +83,43 @@ public class TextConection {
 		new TextConection();
 																	
 		conexion.close();
+	}
+	
+	public ObservableList<Alumnos> ConsultaAlumnos(){
+		ObservableList<Alumnos> aux = FXCollections.observableArrayList();
+		
+		try {
+			Statement stmt = conexion.createStatement();
+			
+			String query = "SELECT NOMBRE, APELLIDOS, EMAIL, TELEFONO FROM angel.Alumnos";
+			System.out.println(query);
+			ResultSet rset = stmt.executeQuery(query);
+			while(rset.next()) {
+				String Nombre = rset.getString(1);
+				String Apellidos = rset.getString(2);
+				String Email = rset.getString(3);
+				int Telefono = rset.getInt(4);
+				
+				Alumnos auxAlu = new Alumnos(Nombre, Apellidos);
+				aux.add(auxAlu);
+				
+		}
+		rset.close();
+		stmt.close();
+		}   catch (SQLException s) {
+			s.printStackTrace();
+			
+		}
+		return aux;
+}
+	
+	public int NuevoAlunmo(String DNI, String nombre, String apellidos, String email, String telefono) throws SQLException {
+		
+		ObservableList<Alumnos> aux = FXCollections.observableArrayList();
+		Statement stmt = conexion.createStatement();
+		int num = stmt.executeUpdate("INSERT INTO ANGEL.ALUMNOS VALUES ("+DNI+" , '"+nombre+"' , '"+apellidos+"', '"+email+"', "+telefono+")");
+		System.out.println("Alumno Editado");
+		stmt.close();
+		return num;
 	}
 }

@@ -22,6 +22,27 @@ public Alumnos(int dNAI, String nombre, String apellidos, String email, int tele
 	ClaveCiclo = claveCiclo;
 	Curso = curso;
 }
+
+public Alumnos(String nombre, String apellidos) {
+	super();
+	Nombre = nombre;
+	Apellidos = apellidos;
+}
+
+public Alumnos() {
+	super();
+	DNAI = 0;
+	Nombre = "";
+	Apellidos = "";
+	Email = "";
+	Telefono = 0;
+	DNI = 0;
+	ClaveCiclo = 0;
+	Curso = "";
+	
+
+}
+
 public int getDNAI() {
 	return DNAI;
 }

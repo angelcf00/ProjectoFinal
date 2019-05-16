@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AlumnosControladora">
    <children>
       <ImageView fitHeight="647.0" fitWidth="516.0">
          <image>
@@ -27,37 +27,37 @@
                </font>
             </Label>
             <Separator layoutX="14.0" layoutY="39.0" prefHeight="13.0" prefWidth="225.0" />
-            <TextField layoutX="86.0" layoutY="72.0" prefHeight="22.0" prefWidth="113.0" />
+            <TextField fx:id="DNITexto" layoutX="86.0" layoutY="72.0" prefHeight="22.0" prefWidth="113.0" />
             <Label cache="true" layoutX="6.0" layoutY="72.0" prefHeight="25.0" prefWidth="96.0" text="DNI Alumno">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="86.0" layoutY="109.0" prefHeight="22.0" prefWidth="113.0" />
+            <TextField fx:id="NombreTexto" layoutX="86.0" layoutY="109.0" prefHeight="22.0" prefWidth="113.0" />
             <Label cache="true" layoutX="5.0" layoutY="109.0" prefHeight="25.0" prefWidth="96.0" text="Nombre">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="86.0" layoutY="144.0" prefHeight="22.0" prefWidth="113.0" />
+            <TextField fx:id="ApellidosTexto" layoutX="86.0" layoutY="144.0" prefHeight="22.0" prefWidth="113.0" />
             <Label cache="true" layoutX="5.0" layoutY="144.0" prefHeight="25.0" prefWidth="96.0" text="Apellidos">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="85.0" layoutY="179.0" prefHeight="22.0" prefWidth="113.0" />
+            <TextField fx:id="EmailTexto" layoutX="85.0" layoutY="179.0" prefHeight="22.0" prefWidth="113.0" />
             <Label cache="true" layoutX="4.0" layoutY="179.0" prefHeight="25.0" prefWidth="96.0" text="E-mail">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button layoutX="283.0" layoutY="284.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="Añadir" />
-            <Button layoutX="389.0" layoutY="284.0" mnemonicParsing="false" text="Borrar" />
-            <TextField layoutX="86.0" layoutY="218.0" prefHeight="22.0" prefWidth="113.0" />
-            <TableView layoutX="239.0" layoutY="44.0" prefHeight="218.0" prefWidth="238.0">
+            <Button fx:id="Anadir" layoutX="283.0" layoutY="284.0" mnemonicParsing="false" onAction="#Anadir" prefHeight="25.0" prefWidth="62.0" text="Añadir" />
+            <Button fx:id="Borrar" layoutX="389.0" layoutY="284.0" mnemonicParsing="false" text="Borrar" />
+            <TextField fx:id="TelefonoTexto" layoutX="86.0" layoutY="218.0" prefHeight="22.0" prefWidth="113.0" />
+            <TableView fx:id="Tabla" layoutX="239.0" layoutY="44.0" prefHeight="218.0" prefWidth="238.0">
                <columns>
-                  <TableColumn prefWidth="74.0" text="C2" />
-                  <TableColumn prefWidth="76.0" text="C1" />
+                  <TableColumn fx:id="Nombre" prefWidth="74.0" text="Nombre" />
+                  <TableColumn fx:id="Apellidos" prefWidth="76.0" text="Apellidos" />
                </columns>
             </TableView>
             <ChoiceBox layoutX="389.0" layoutY="19.0" prefHeight="25.0" prefWidth="88.0" />
@@ -66,13 +66,13 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="84.0" layoutY="379.0" prefHeight="22.0" prefWidth="113.0" />
+            <TextField fx:id="DNITexto2" layoutX="84.0" layoutY="379.0" prefHeight="22.0" prefWidth="113.0" />
             <Label cache="true" layoutX="4.0" layoutY="379.0" prefHeight="25.0" prefWidth="96.0" text="DNI Alumno">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="84.0" layoutY="416.0" prefHeight="22.0" prefWidth="113.0" />
+            <TextField fx:id="ClaveTexto" layoutX="84.0" layoutY="416.0" prefHeight="22.0" prefWidth="113.0" />
             <Label cache="true" layoutX="3.0" layoutY="416.0" prefHeight="25.0" prefWidth="96.0" text="Clave Ciclo">
                <font>
                   <Font size="14.0" />
