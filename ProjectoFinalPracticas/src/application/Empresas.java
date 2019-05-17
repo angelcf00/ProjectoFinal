@@ -32,6 +32,28 @@ public Empresas(int iDConvenio, String cIF, String representante, String nIFRep,
 	Fax = fax;
 }
 
+public Empresas() {
+	super();
+	IDConvenio = 0;
+	CIF = "";
+	Representante = "";
+	NIFRep = "";
+	NombreEmpresa = "";
+	Pais = "";
+	Ciudad = "";
+	this.provincia = "";
+	Direccion = "";
+	CP = 0;
+	Telefono = 0;
+	Fax = 0;
+}
+
+public Empresas(int iDConvenio, String nombreEmpresa) {
+	super();
+	IDConvenio = iDConvenio;
+	NombreEmpresa = nombreEmpresa;
+}
+
 public int getIDConvenio() {
 	return IDConvenio;
 }

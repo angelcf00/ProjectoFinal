@@ -122,4 +122,40 @@ public class TextConection {
 		stmt.close();
 		return num;
 	}
+	
+	public ObservableList<Empresas> ConsultaEmpresas(){
+		ObservableList<Empresas> aux2 = FXCollections.observableArrayList();
+		
+		try {
+			Statement stmt = conexion.createStatement();
+			
+			String query = "SELECT iDConvenio, nombreEmpresa, , TELEFONO FROM angel.Empresas";
+			System.out.println(query);
+			ResultSet rset = stmt.executeQuery(query);
+			while(rset.next()) {
+				int iDConvenio = rset.getInt(1);
+				String nombreEmpresa = rset.getString(2);
+				
+				Empresas auxEmp = new Empresas(iDConvenio, nombreEmpresa);
+				aux2.add(auxEmp);
+				
+		}
+		rset.close();
+		stmt.close();
+		}   catch (SQLException s) {
+			s.printStackTrace();
+			
+		}
+		return aux2;
+}
+	
+	public int NuevoEmpresas(String idConvenio, String nombreEmpresa) throws SQLException {
+		
+		ObservableList<Empresas> aux2 = FXCollections.observableArrayList();
+		Statement stmt = conexion.createStatement();
+		int num = stmt.executeUpdate("INSERT INTO ANGEL.ALUMNOS VALUES ("+idConvenio+" , '"+nombreEmpresa+"')");
+		System.out.println("Empresa Editada");
+		stmt.close();
+		return num;
+	}
 }
