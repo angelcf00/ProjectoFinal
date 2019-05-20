@@ -25,7 +25,7 @@ public Empresas(int iDConvenio, String cIF, String representante, String nIFRep,
 	NombreEmpresa = nombreEmpresa;
 	Pais = pais;
 	Ciudad = ciudad;
-	this.provincia = provincia;
+	provincia = provincia;
 	Direccion = direccion;
 	CP = cP;
 	Telefono = telefono;
@@ -41,7 +41,7 @@ public Empresas() {
 	NombreEmpresa = "";
 	Pais = "";
 	Ciudad = "";
-	this.provincia = "";
+	provincia = "";
 	Direccion = "";
 	CP = 0;
 	Telefono = 0;

@@ -20,6 +20,7 @@ public class TextConection {
 	private String url= "jdbc:oracle:thin:@localhost:1521:XE";
 	private String usr = "";
 	private String pwd = "";
+	private String scheme = "";
 	private static Connection conexion;
 
 
@@ -37,6 +38,7 @@ public class TextConection {
 			url =	propiedades.getProperty("url");
 			usr =	propiedades.getProperty("usr");
 			pwd =	propiedades.getProperty("pwd");
+			scheme = propiedades.getProperty("scheme");
 			 
 			System.out.println(bd);
 			System.out.println(url);
@@ -91,14 +93,12 @@ public class TextConection {
 		try {
 			Statement stmt = conexion.createStatement();
 			
-			String query = "SELECT NOMBRE, APELLIDOS, EMAIL, TELEFONO FROM angel.Alumnos";
+			String query = "SELECT NOMBRE, APELLIDOS, EMAIL, TELEFONO FROM "+scheme+".Alumnos";
 			System.out.println(query);
 			ResultSet rset = stmt.executeQuery(query);
 			while(rset.next()) {
 				String Nombre = rset.getString(1);
 				String Apellidos = rset.getString(2);
-				String Email = rset.getString(3);
-				int Telefono = rset.getInt(4);
 				
 				Alumnos auxAlu = new Alumnos(Nombre, Apellidos);
 				aux.add(auxAlu);
@@ -117,7 +117,7 @@ public class TextConection {
 		
 		ObservableList<Alumnos> aux = FXCollections.observableArrayList();
 		Statement stmt = conexion.createStatement();
-		int num = stmt.executeUpdate("INSERT INTO ANGEL.ALUMNOS VALUES ("+DNI+" , '"+nombre+"' , '"+apellidos+"', '"+email+"', "+telefono+")");
+		int num = stmt.executeUpdate("INSERT INTO ANGEL.ALUMNOS VALUES ('"+DNI+"' , '"+nombre+"' , '"+apellidos+"', '"+email+"', "+telefono+")");
 		System.out.println("Alumno Editado");
 		stmt.close();
 		return num;
@@ -129,7 +129,7 @@ public class TextConection {
 		try {
 			Statement stmt = conexion.createStatement();
 			
-			String query = "SELECT iDConvenio, nombreEmpresa, , TELEFONO FROM angel.Empresas";
+			String query = "SELECT iDConvenio, CIF, Representante, NIFRep, NombreEmpresa, Pais, Ciudad, Provincia, Direccion, CP, Telefono, Fax FROM angel.EMPRESA";
 			System.out.println(query);
 			ResultSet rset = stmt.executeQuery(query);
 			while(rset.next()) {
@@ -149,13 +149,14 @@ public class TextConection {
 		return aux2;
 }
 	
-	public int NuevoEmpresas(String idConvenio, String nombreEmpresa) throws SQLException {
+	public int NuevoEmpresas(String idConvenio, String CIF, String Representante, String NIFRep, String nombreEmpresa, String Pais, String Ciudad, String Provincia, String Direccion, String CP, String Telefono, String Fax) throws SQLException {
 		
 		ObservableList<Empresas> aux2 = FXCollections.observableArrayList();
 		Statement stmt = conexion.createStatement();
-		int num = stmt.executeUpdate("INSERT INTO ANGEL.ALUMNOS VALUES ("+idConvenio+" , '"+nombreEmpresa+"')");
-		System.out.println("Empresa Editada");
+		int num = stmt.executeUpdate("INSERT INTO ANGEL.EMPRESA VALUES ("+idConvenio+" , '"+CIF+"', '"+Representante+"' , '"+NIFRep+"', '"+nombreEmpresa+"', '"+Pais+"', '"+Ciudad+"', '"+Provincia+"', '"+Direccion+"', "+CP+", "+Telefono+" , "+Fax+"  )");
+		System.out.println("Empresa Insertada");
 		stmt.close();
 		return num;
 	}
+
 }

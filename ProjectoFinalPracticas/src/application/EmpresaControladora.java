@@ -62,12 +62,12 @@ public class EmpresaControladora {
 	   private TableColumn<Empresas, Integer> IDconvenio1 ;
 	   
 	   @FXML
-	   private TableColumn<Empresas, String> NombreEmpresa  ;
+	   private TableColumn<Empresas, String> NombreEmpresa1  ;
 	   
 	   public void Anadir(ActionEvent event) throws SQLException {
 		   conexionBBDD = new TextConection();
-		   conexionBBDD.NuevoEmpresas(IDconvenio.getInsets(), CIF.getText(), Representante.getText(), NIFrep.getText(), Nombre.getText()
-				   , Pais.getText(), Ciudad.getText(), Provincia.getText(), Direccion.getText(), CP.getInsets(), Telefono.getInsets(), Fax.getInsets());
+		   conexionBBDD.NuevoEmpresas(IDconvenio.getText(), CIF.getText(), Representante.getText(), NIFrep.getText(), Nombre.getText(),
+				   Pais.getText(), Ciudad.getText(),Provincia.getText(), Direccion.getText(), CP.getText(), Telefono.getText(), Fax.getText());
 	   
 	   
 	   
@@ -80,9 +80,13 @@ public class EmpresaControladora {
 		private void initialize(){
 		   conexionBBDD = new TextConection();
 		   data = conexionBBDD.ConsultaEmpresas();
+		   
+		   System.out.println(data);
+		   
 		   Tabla.setItems(data);
 		   
-		   NombreEmpresa.setCellValueFactory(new PropertyValueFactory<Alumnos,String>("NombreEmpresa"));
-		   IDconvenio1.setCellValueFactory(new PropertyValueFactory<Alumnos,Integer>("IDconvenio1"));
+		   IDconvenio1.setCellValueFactory(new PropertyValueFactory<Empresas,Integer>("IDConvenio"));
+		   NombreEmpresa1.setCellValueFactory(new PropertyValueFactory<Empresas,String>("NombreEmpresa"));
+		   
 		}
 }

@@ -1,16 +1,16 @@
 package application;
 
 public class Alumnos {
-int DNAI;
+String DNAI;
 String Nombre; 
 String Apellidos;
 String Email;
 int Telefono;
 
-int DNI;
+String DNI;
 int ClaveCiclo;
 String Curso;
-public Alumnos(int dNAI, String nombre, String apellidos, String email, int telefono, int dNI, int claveCiclo,
+public Alumnos(String dNAI, String nombre, String apellidos, String email, int telefono, String dNI, int claveCiclo,
 		String curso) {
 	super();
 	DNAI = dNAI;
@@ -31,22 +31,22 @@ public Alumnos(String nombre, String apellidos) {
 
 public Alumnos() {
 	super();
-	DNAI = 0;
+	DNAI = "";
 	Nombre = "";
 	Apellidos = "";
 	Email = "";
 	Telefono = 0;
-	DNI = 0;
+	DNI = "";
 	ClaveCiclo = 0;
 	Curso = "";
 	
 
 }
 
-public int getDNAI() {
+public String getDNAI() {
 	return DNAI;
 }
-public void setDNAI(int dNAI) {
+public void setDNAI(String dNAI) {
 	DNAI = dNAI;
 }
 public String getNombre() {
@@ -73,10 +73,10 @@ public int getTelefono() {
 public void setTelefono(int telefono) {
 	Telefono = telefono;
 }
-public int getDNI() {
+public String getDNI() {
 	return DNI;
 }
-public void setDNI(int dNI) {
+public void setDNI(String dNI) {
 	DNI = dNI;
 }
 public int getClaveCiclo() {

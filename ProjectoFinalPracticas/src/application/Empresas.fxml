@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EmpresaControladora">
    <children>
       <ImageView fitHeight="528.0" fitWidth="505.0">
          <image>
@@ -27,81 +27,81 @@
                </font>
             </Label>
             <Separator layoutX="14.0" layoutY="39.0" prefHeight="13.0" prefWidth="225.0" />
-            <TextField layoutX="99.0" layoutY="73.0" prefHeight="22.0" prefWidth="113.0" />
+            <TextField fx:id="IDconvenio" layoutX="99.0" layoutY="73.0" prefHeight="22.0" prefWidth="113.0" />
             <Label layoutX="6.0" layoutY="72.0" prefHeight="25.0" prefWidth="96.0" text="IDConvenio">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="101.0" layoutY="110.0" prefHeight="22.0" prefWidth="113.0" />
+            <TextField fx:id="CIF" layoutX="101.0" layoutY="110.0" prefHeight="22.0" prefWidth="113.0" />
             <Label layoutX="5.0" layoutY="109.0" prefHeight="25.0" prefWidth="96.0" text="CIF">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="100.0" layoutY="144.0" prefHeight="22.0" prefWidth="113.0" />
+            <TextField fx:id="Representante" layoutX="100.0" layoutY="144.0" prefHeight="22.0" prefWidth="113.0" />
             <Label layoutX="5.0" layoutY="144.0" prefHeight="25.0" prefWidth="96.0" text="Representante">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="100.0" layoutY="180.0" prefHeight="22.0" prefWidth="113.0" />
+            <TextField fx:id="NIFrep" layoutX="100.0" layoutY="180.0" prefHeight="22.0" prefWidth="113.0" />
             <Label layoutX="4.0" layoutY="179.0" prefHeight="25.0" prefWidth="96.0" text="NIF Rep.">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button layoutX="276.0" layoutY="466.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="Añadir" />
-            <Button layoutX="389.0" layoutY="466.0" mnemonicParsing="false" text="Borrar" />
-            <TextField layoutX="101.0" layoutY="219.0" prefHeight="22.0" prefWidth="113.0" />
+            <Button fx:id="Anadir" layoutX="276.0" layoutY="466.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="Añadir" />
+            <Button fx:id="Borrar" layoutX="389.0" layoutY="466.0" mnemonicParsing="false" text="Borrar" />
+            <TextField fx:id="Nombre" layoutX="101.0" layoutY="219.0" prefHeight="22.0" prefWidth="113.0" />
             <Label layoutX="5.0" layoutY="218.0" prefHeight="25.0" prefWidth="96.0" text="Nombre">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TableView layoutX="239.0" layoutY="44.0" prefHeight="389.0" prefWidth="238.0">
+            <TableView fx:id="Tabla" layoutX="239.0" layoutY="44.0" prefHeight="389.0" prefWidth="238.0">
                <columns>
-                  <TableColumn prefWidth="74.0" text="C2" />
-                  <TableColumn prefWidth="76.0" text="C1" />
+                  <TableColumn fx:id="NombreEmpresa1" prefWidth="74.0" text="Nombre" />
+                  <TableColumn fx:id="IDconvenio1" prefWidth="76.0" text="IDConvenio" />
                </columns>
             </TableView>
-            <TextField layoutX="101.0" layoutY="262.0" prefHeight="22.0" prefWidth="113.0" />
+            <TextField fx:id="Pais" layoutX="101.0" layoutY="262.0" prefHeight="22.0" prefWidth="113.0" />
             <Label layoutX="5.0" layoutY="261.0" prefHeight="25.0" prefWidth="96.0" text="Pais">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="101.0" layoutY="302.0" prefHeight="22.0" prefWidth="113.0" />
+            <TextField fx:id="Ciudad" layoutX="101.0" layoutY="302.0" prefHeight="22.0" prefWidth="113.0" />
             <Label layoutX="5.0" layoutY="301.0" prefHeight="25.0" prefWidth="96.0" text="Ciudad">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="101.0" layoutY="342.0" prefHeight="22.0" prefWidth="113.0" />
+            <TextField fx:id="Provincia" layoutX="101.0" layoutY="342.0" prefHeight="22.0" prefWidth="113.0" />
             <Label layoutX="5.0" layoutY="341.0" prefHeight="25.0" prefWidth="96.0" text="Provincia">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="101.0" layoutY="374.0" prefHeight="22.0" prefWidth="113.0" />
+            <TextField fx:id="Direccion" layoutX="101.0" layoutY="374.0" prefHeight="22.0" prefWidth="113.0" />
             <Label layoutX="5.0" layoutY="373.0" prefHeight="25.0" prefWidth="96.0" text="Direccion">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="99.0" layoutY="407.0" prefHeight="22.0" prefWidth="113.0" />
+            <TextField fx:id="CP" layoutX="99.0" layoutY="407.0" prefHeight="22.0" prefWidth="113.0" />
             <Label layoutX="3.0" layoutY="406.0" prefHeight="25.0" prefWidth="96.0" text="CP">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="100.0" layoutY="443.0" prefHeight="22.0" prefWidth="113.0" />
+            <TextField fx:id="Telefono" layoutX="100.0" layoutY="443.0" prefHeight="22.0" prefWidth="113.0" />
             <Label layoutX="4.0" layoutY="442.0" prefHeight="25.0" prefWidth="96.0" text="Telefono">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="101.0" layoutY="479.0" prefHeight="22.0" prefWidth="113.0" />
+            <TextField fx:id="Fax" layoutX="101.0" layoutY="479.0" prefHeight="22.0" prefWidth="113.0" />
             <Label layoutX="5.0" layoutY="478.0" prefHeight="25.0" prefWidth="96.0" text="Fax">
                <font>
                   <Font size="14.0" />
